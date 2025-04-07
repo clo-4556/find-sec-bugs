@@ -11,8 +11,7 @@ jobs:
        runs-on: ubuntu-latest
 
        steps: 
-          - name: Install Semgrep
-             run: pip install semgrep
-
           - name: Run Semgrep scan
-             run: segrep scan --config=auto
+            run: semgrep ci --config=auto
+            env: 
+                SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN}}
